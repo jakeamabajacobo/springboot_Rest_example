@@ -6,11 +6,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 //User Service - handle communication to User Object class to UserController
 @Component
-public class UserDaoService {
+public class UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     public static int userCount = 5;
@@ -60,6 +61,20 @@ public class UserDaoService {
         }
         return null;
     }
+
+    public List<User> DeleteById(int id){
+        Iterator<User> iterator = users.iterator();
+        while(iterator.hasNext()){
+            User user =iterator.next();
+                if(user.getId()==id){
+                    iterator.remove();
+                    return users;
+                }
+        }
+      return null;
+    }
+
+
 
 
 

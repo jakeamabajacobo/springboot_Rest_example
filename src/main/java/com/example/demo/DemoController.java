@@ -47,7 +47,7 @@ public class DemoController {
 //
 //
 //    @Autowired
-//    private UserDaoService service;
+//    private UserService service;
 //    @GetMapping("/users")
 //    public List<User> retrieveAllUsers(){
 //        return service.findAll();
