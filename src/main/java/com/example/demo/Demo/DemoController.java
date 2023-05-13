@@ -1,10 +1,7 @@
-package com.example.demo;
+package com.example.demo.Demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 //Another Example of Controller forw eb
 

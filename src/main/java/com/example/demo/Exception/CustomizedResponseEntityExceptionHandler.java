@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.Exception;
 
+import com.example.demo.User.UserNotFoundException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
