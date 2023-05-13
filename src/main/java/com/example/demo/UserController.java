@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Iterator;
 import java.util.List;
 
 //contoller to handel the web content request
@@ -44,14 +44,14 @@ public class UserController {
     }
 
     @PostMapping("/saveuser")
-    public ResponseEntity<Object> createUser(@RequestBody User user){
+    public ResponseEntity<Object> createUser(@Valid @RequestBody User user){
         logger.info("POST FORM: " + user);
         User savedUser=  service.saveUser(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
         return ResponseEntity.created(location).build();
     }
 
-    @PostMapping("/removeuser/{id}")
+    @DeleteMapping("/removeuser/{id}")
     public List<User> DeleteUser(@PathVariable int id){
             List<User> userList = service.DeleteById(id);
 

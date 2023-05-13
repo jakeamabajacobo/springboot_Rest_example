@@ -1,12 +1,18 @@
 package com.example.demo;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
 
 //object class user
 public class User {
 
     private Integer id;
+
+    @Size(min=5)
     private String name;
+    @Past
     private Date dob;
 
     public User(Integer id, String name, Date dob) {
